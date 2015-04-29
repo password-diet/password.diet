@@ -1,6 +1,8 @@
 # password.diet
 The code behind https://password.diet/
 
+The base was generated with the [generator-react-6](https://www.npmjs.com/package/generator-react-6) Yeoman generator.
+
 #### Setting up the environment
 ```
 npm install
