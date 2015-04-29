@@ -1,0 +1,5 @@
+{
+  "generator-react-6": {
+    "includeJest": true
+  }
+}
