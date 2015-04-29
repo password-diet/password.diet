@@ -7,6 +7,7 @@ The base was generated with the [generator-react-6](https://www.npmjs.com/packag
 ```
 npm install
 bower install
+gem install sass
 ```
 
 #### Running the development server locally
