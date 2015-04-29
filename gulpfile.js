@@ -93,6 +93,12 @@ gulp.task('extras', function () {
     .pipe($.size());
 });
 
+gulp.task('icons', function () {
+  return gulp.src('app/icons/*')
+    .pipe(gulp.dest('dist/icons/'))
+    .pipe($.size());
+});
+
 gulp.task('serve', function() {
   gulp.src('dist')
     .pipe($.webserver({
@@ -134,7 +140,7 @@ gulp.task('minify', ['minify:js', 'minify:css']);
 
 gulp.task('clean', del.bind(null, 'dist'));
 
-gulp.task('bundle', ['html', 'styles', 'scripts', 'images', 'fonts', 'extras', 'data']);
+gulp.task('bundle', ['html', 'styles', 'scripts', 'images', 'fonts', 'extras', 'icons', 'data']);
 
 gulp.task('clean-bundle', sync(['clean', 'bundle']));
 
