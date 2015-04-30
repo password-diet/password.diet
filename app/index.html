@@ -5,8 +5,8 @@
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
   <head>
     <meta charset="utf-8">
-    <title>The secure password generator</title>
-    <meta name="description" content="">
+    <title>Password.diet | The secure diceware password generator</title>
+    <meta name="description" content="Password.diet generates secure, memorable random passwors with the diceware method entirely on the client side">
     <meta name="viewport" content="width=device-width">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <link rel="stylesheet" href="styles/main.css">
@@ -35,8 +35,17 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-    <link href="http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
-    <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+
+    <meta property="og:title" content="Password.diet | The secure diceware password generator"/>
+    <meta property="og:url" content="https://password.diet/" />
+    <meta property="og:site_name" content="Password.diet"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:image" content="https://password.diet/images/screenshot.png"/>
+    <meta property="og:description" content="Password.diet generates secure, memorable random passwors with the diceware method entirely on the client side"/>
+
+
   </head>
 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
 
@@ -108,20 +117,10 @@
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2">
                 <h2>How does it work?</h2>
-                <p>Feel free to email us to provide some feedback on our templates, give us suggestions for new templates and themes, or to just say hello!</p>
-                <p><a href="mailto:feedback@startbootstrap.com">feedback@startbootstrap.com</a>
-                </p>
-                <ul class="list-inline banner-social-buttons">
-                    <li>
-                        <a href="https://twitter.com/SBootstrap" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
-                    </li>
-                    <li>
-                        <a href="https://github.com/IronSummitMedia/startbootstrap" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
-                    </li>
-                    <li>
-                        <a href="https://plus.google.com/+Startbootstrap/posts" class="btn btn-default btn-lg"><i class="fa fa-google-plus fa-fw"></i> <span class="network-name">Google+</span></a>
-                    </li>
-                </ul>
+                <p>Feel free to check out <a href="https://github.com/ochronus/password.diet">the source code on Github</a>.</p>
+                <p><a href="http://en.wikipedia.org/wiki/Diceware">Diceware</a> is a method for creating passphrases, passwords, and other cryptographic variables using an ordinary die from a pair of dice as a hardware random number generator. For each word in the passphrase, five rolls of the dice are required. The numbers from 1 to 6 that come up in the rolls are assembled as a five digit number, e.g. 43146. That number is then used to look up a word in a word list.</p>
+                <p>Password.diet is using the secure crypto API in your browser to generate random values. Check out the <a href="http://caniuse.com/#feat=getrandomvalues">browser compatibility chart</a>.</p>
+                <p>The generation is entirely done on the client side, in your browser. There's no communication with the server apart from downloading the word list, we're not logging any of the passwords you generate, they are not sent over the wire.</p>
             </div>
         </div>
     </section>
@@ -130,19 +129,14 @@
     <section id="contact2" class="container content-section text-center">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2">
-                <h2>Why diceware?</h2>
-                <p>Feel free to email us to provide some feedback on our templates, give us suggestions for new templates and themes, or to just say hello!</p>
-                <p><a href="mailto:feedback@startbootstrap.com">feedback@startbootstrap.com</a>
-                </p>
+                <h2>Contact</h2>
+                <p>This is a one man show :)</p>
                 <ul class="list-inline banner-social-buttons">
                     <li>
-                        <a href="https://twitter.com/SBootstrap" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
+                        <a href="https://twitter.com/ochronus" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
                     </li>
                     <li>
-                        <a href="https://github.com/IronSummitMedia/startbootstrap" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
-                    </li>
-                    <li>
-                        <a href="https://plus.google.com/+Startbootstrap/posts" class="btn btn-default btn-lg"><i class="fa fa-google-plus fa-fw"></i> <span class="network-name">Google+</span></a>
+                        <a href="https://github.com/ochronus/password.diet" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
                     </li>
                 </ul>
             </div>
@@ -156,7 +150,7 @@
     <!-- Footer -->
     <footer>
         <div class="container text-center">
-            <p>Copyright &copy; Your Website 2014</p>
+            <p>Copyright &copy; ochronus @ 2015</p>
         </div>
     </footer>
     <!-- build:js scripts/vendor.js -->

@@ -1,5 +1,7 @@
 import React from 'react';
 
+window.crypto = window.crypto || window.msCrypto;
+
 function getRandomInt(min, max) {       
     // Create byte array and fill with 1 random number
     var byteArray = new Uint8Array(1);
@@ -83,7 +85,7 @@ export default class extends React.Component {
       this.state = {
         'diceware_list': {},
         'words': [],
-        'lang': 'swe'
+        'lang': 'en'
       }
       this.handleGenerate = this.handleGenerate.bind(this);
       this.selectCountry = this.selectCountry.bind(this);

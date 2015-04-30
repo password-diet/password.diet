@@ -66,11 +66,11 @@ gulp.task('html', function() {
 
 gulp.task('images', function() {
   return gulp.src('app/images/**/*')
-    .pipe($.cache($.imagemin({
+    .pipe($.imagemin({
       optimizationLevel: 3,
       progressive: true,
       interlaced: true
-    })))
+    }))
     .pipe(gulp.dest('dist/images'))
     .pipe($.size());
 });
@@ -103,6 +103,7 @@ gulp.task('serve', function() {
   gulp.src('dist')
     .pipe($.webserver({
       livereload: true,
+      host: '0.0.0.0',
       port: 9000
     }));
 });
