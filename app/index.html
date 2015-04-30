@@ -164,8 +164,9 @@
     <script src="scripts/app.js"></script>
     <script>
         $("body").floatingShare({
-            buttons: ["facebook","twitter","google-plus"],
-            text: "share with: "
+            buttons: ["facebook","twitter","google-plus","stumbleupon","pinterest"],
+            text: "share with: ",
+            description: $("meta[name='description']").attr("content"),
         });
     </script>
     <script>
