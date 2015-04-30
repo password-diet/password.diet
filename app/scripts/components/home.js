@@ -121,26 +121,21 @@ export default class extends React.Component {
     }
 
   render() {
-    return (
-      <div>          
+    return (       
         <div className="row">
-          <div className="col-lg-8 col-lg-offset-2">
-            <div className="text-center">
-                <h3 className="well text-center password-well" onClick={this.selectWords}>{this.state.words.join(" ")}</h3>
-                <button type="button" className="btn btn-primary" onClick={ this.handleGenerate }><span className="glyphicon glyphicon-refresh"></span> Generate new</button>
-                <div>
-                  <figure className="country-selector">
-                    <img data-lang="en" alt="English" title="English" className="img-country img-country-active" onClick={this.selectCountry} src="/images/flag-usa.png" alt="Kooaburra"></img>
-                    <img data-lang="jp" alt="Japanese" title="Japanese" className="img-country" onClick={this.selectCountry} src="/images/flag-japan.png" alt="Pelican stood on the beach"></img>
-                    <img data-lang="swe" alt="Swedish" title="Swedish" className="img-country" onClick={this.selectCountry} src="/images/flag-sweden.png" alt="Cheeky looking Rainbow Lorikeet"></img>
-                    <figcaption>Choose your word list language</figcaption>
-                  </figure>
-                </div>
+          <div className="col-lg-8 col-lg-offset-2 text-center">
+            <h3 className="well text-center password-well" onClick={this.selectWords}>{this.state.words.join(" ")}</h3>
+            <button type="button" className="btn btn-primary" onClick={ this.handleGenerate }><span className="glyphicon glyphicon-refresh"></span> Generate new</button>
+            <div>
+              <figure className="country-selector">
+                <img data-lang="en" alt="English" title="English" className="img-country img-country-active" onClick={this.selectCountry} src="/images/flag-usa.png" alt="Kooaburra"></img>
+                <img data-lang="jp" alt="Japanese" title="Japanese" className="img-country" onClick={this.selectCountry} src="/images/flag-japan.png" alt="Pelican stood on the beach"></img>
+                <img data-lang="swe" alt="Swedish" title="Swedish" className="img-country" onClick={this.selectCountry} src="/images/flag-sweden.png" alt="Cheeky looking Rainbow Lorikeet"></img>
+                <figcaption>Choose your word list language</figcaption>
+              </figure>
             </div>
           </div>
         </div>
-
-      </div>
     );
   }
 
