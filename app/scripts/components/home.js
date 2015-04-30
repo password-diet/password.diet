@@ -1,11 +1,11 @@
 import React from 'react';
 
-window.crypto = window.crypto || window.msCrypto;
+window.cryptoMethod = window.crypto || window.msCrypto;
 
 function getRandomInt(min, max) {       
     // Create byte array and fill with 1 random number
     var byteArray = new Uint8Array(1);
-    window.crypto.getRandomValues(byteArray);
+    window.cryptoMethod.getRandomValues(byteArray);
 
     var range = max - min + 1;
     var max_range = 256;
@@ -130,9 +130,9 @@ export default class extends React.Component {
             <button type="button" className="btn btn-primary" onClick={ this.handleGenerate }><span className="glyphicon glyphicon-refresh"></span> Generate new</button>
             <div>
               <figure className="country-selector">
-                <img data-lang="en" alt="English" title="English" className="img-country img-country-active" onClick={this.selectCountry} src="/images/flag-usa.png" alt="Kooaburra"></img>
-                <img data-lang="jp" alt="Japanese" title="Japanese" className="img-country" onClick={this.selectCountry} src="/images/flag-japan.png" alt="Pelican stood on the beach"></img>
-                <img data-lang="swe" alt="Swedish" title="Swedish" className="img-country" onClick={this.selectCountry} src="/images/flag-sweden.png" alt="Cheeky looking Rainbow Lorikeet"></img>
+                <img data-lang="en" title="English" className="img-country img-country-active" onClick={this.selectCountry} src="/images/flag-usa.png" alt="Kooaburra"></img>
+                <img data-lang="jp" title="Japanese" className="img-country" onClick={this.selectCountry} src="/images/flag-japan.png" alt="Pelican stood on the beach"></img>
+                <img data-lang="swe" title="Swedish" className="img-country" onClick={this.selectCountry} src="/images/flag-sweden.png" alt="Cheeky looking Rainbow Lorikeet"></img>
                 <figcaption>Choose your word list language</figcaption>
               </figure>
             </div>
