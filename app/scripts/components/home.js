@@ -82,9 +82,11 @@ export default class extends React.Component {
       super(props);
       this.state = {
         'diceware_list': {},
-        'words': []
+        'words': [],
+        'lang': 'swe'
       }
       this.handleGenerate = this.handleGenerate.bind(this);
+      this.selectCountry = this.selectCountry.bind(this);
     }
     getRandomList() {
         var words = [];
@@ -109,29 +111,67 @@ export default class extends React.Component {
         SelectText(evt.target);
     }
 
+    selectCountry(evt) {
+      var lang = evt.target.getAttribute("data-lang");
+      if (lang != this.state.lang) {
+        document.getElementsByClassName("img-country img-country-active")[0].className = 'img-country';
+        evt.target.className = 'img-country img-country-active';
+        this.fetchList(lang);
+      }
+    }
+
   render() {
     return (
       <div>
-        <h1 className="text-center">Secure <a href="http://en.wikipedia.org/wiki/Diceware">diceware</a> passwords for you</h1>
+        <h1 className="text-center"><strong>Secure <a href="http://en.wikipedia.org/wiki/Diceware">diceware</a> passwords for you</strong></h1>
                 
-            
-        <div className="text-center">
-            <h3 className="well text-center" onClick={this.selectWords}>{this.state.words.join(" ")}</h3>
-            <button type="button" className="btn btn-primary" onClick={ this.handleGenerate }><span className="glyphicon glyphicon-refresh"></span> Generate</button>
+        <div className="row">
+          <div className="col-md-8 col-lg-8 col-sm-12 col-xs-12 col-md-offset-2 col-lg-offset-2">
+            <div className="text-center">
+                <h3 className="well text-center password-well" onClick={this.selectWords}>{this.state.words.join(" ")}</h3>
+                <button type="button" className="btn btn-primary" onClick={ this.handleGenerate }><span className="glyphicon glyphicon-refresh"></span> Generate new</button>
+                <div>
+                  <figure className="country-selector">
+                    <img data-lang="en" alt="English" title="English" className="img-country img-country-active" onClick={this.selectCountry} src="/images/flag-usa.png" alt="Kooaburra"></img>
+                    <img data-lang="jp" alt="Japanese" title="Japanese" className="img-country" onClick={this.selectCountry} src="/images/flag-japan.png" alt="Pelican stood on the beach"></img>
+                    <img data-lang="swe" alt="Swedish" title="Swedish" className="img-country" onClick={this.selectCountry} src="/images/flag-sweden.png" alt="Cheeky looking Rainbow Lorikeet"></img>
+                    <figcaption>Choose your word list language</figcaption>
+                  </figure>
+                </div>
+            </div>
+          </div>
+        </div>
+        <div className="row diceware-explanation">
+          <div className="col-md-8 col-lg-8 col-sm-12 col-xs-12 col-md-offset-2 col-lg-offset-2">
+            <h3 className="text-center">Which is more memorable?<div><strong>Da6ee^ch.aij</strong> or <strong>mock omen laugh weary dy glen</strong>?</div></h3>
+            <h4 className="explanation-paragraph">The entropy offered by Diceware is 12.9 bits per word - log<sub>2</sub>(7776) - so the six-word passphrase above has an entropy of <strong>77.4 bits</strong>.</h4>
+            <h4 className="explanation-paragraph">Compare this to choosing 10 letters at random: the entropy of that is 10 * log<sub>2</sub>(26) = <strong>47.0 bits</strong>.</h4>
+            <h4 className="explanation-paragraph">If you were to use <a href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">ASCII printable characters</a>, you'd need at least 12 characters to surpass a six word memorable diceware password.</h4> 
+          </div>
         </div>
       </div>
     );
   }
 
-  componentDidMount() {
-      var that = this;
-      get('/diceware.json').then(function(response) {
-          that.setState({
-            'diceware_list': JSON.parse(response)
+  fetchList(lang) {
+      if (!lang) {
+        lang = this.state.lang;
+      }
+      get('/diceware_' + lang +'.json').then(
+        function(response) {
+          this.setState({
+            'diceware_list': JSON.parse(response),
+            'lang': lang
           });
-          that.generateRandomList();
-      }, function(error) {
-        console.error("Failed!", error);
-      });
-    }
+          this.generateRandomList();
+        }.bind(this),
+        function(error) {
+          console.error("Failed!", error);
+        }
+      );
+  }
+
+  componentDidMount() {
+      this.fetchList();
+  }
 }
