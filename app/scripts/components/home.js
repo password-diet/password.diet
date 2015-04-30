@@ -124,7 +124,7 @@ export default class extends React.Component {
     return (
       <div>          
         <div className="row">
-          <div className="col-md-8 col-lg-8 col-sm-12 col-xs-12 col-md-offset-2 col-lg-offset-2">
+          <div className="col-lg-8 col-lg-offset-2">
             <div className="text-center">
                 <h3 className="well text-center password-well" onClick={this.selectWords}>{this.state.words.join(" ")}</h3>
                 <button type="button" className="btn btn-primary" onClick={ this.handleGenerate }><span className="glyphicon glyphicon-refresh"></span> Generate new</button>
