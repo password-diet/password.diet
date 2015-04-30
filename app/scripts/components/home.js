@@ -106,6 +106,7 @@ export default class extends React.Component {
 
     handleGenerate(evt) {
         this.generateRandomList();
+        ga('send', 'event', 'generatebutton', 'click');
     }
     
 
@@ -120,6 +121,7 @@ export default class extends React.Component {
         evt.target.className = 'img-country img-country-active';
         this.fetchList(lang);
       }
+      ga('send', 'event', 'select_lang', 'click', lang);
     }
 
   render() {
