@@ -37,7 +37,7 @@
 
     <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
-
+    
     <meta property="og:title" content="Password.diet | The secure diceware password generator"/>
     <meta property="og:url" content="https://password.diet/" />
     <meta property="og:site_name" content="Password.diet"/>
@@ -158,9 +158,16 @@
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/jquery.easing/js/jquery.easing.js"></script>
     <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap.js"></script>
+    <script src="bower_components/jquery-floating-social-share/dist/js/jquery.floating-social-share.min.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
     <script src="scripts/app.js"></script>
+    <script>
+        $("body").floatingShare({
+            buttons: ["facebook","twitter","google-plus"],
+            text: "share with: "
+        });
+    </script>
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
