@@ -30,17 +30,139 @@
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="/icons/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <link href="http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
   </head>
-  <body>
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                    <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand page-scroll" href="#page-top">
+                    <i class="fa fa-play-circle"></i>  <span class="light">Generate</span> memorable passwords
+                </a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+                <ul class="nav navbar-nav">
+                    <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#about">Why?</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#contact">How?</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#contact2">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Intro Header -->
+    <header class="intro">
+        <div class="intro-body">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        <h1 class="brand-heading">Diceware</h1>
+                        <p class="intro-text">Memorable and secure passwords.</p>
+                    </div>
+                </div>
+                <div id="app"></div>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="container content-section text-center">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+                <h2>Why diceware?</h2>
+                <p>Which is more memorable? <strong>Da6ee^ch.aij</strong> or <strong>mock omen laugh weary dy glen</strong>?</p>
+                <p>The entropy offered by Diceware is 12.9 bits per word - log<sub>2</sub>(7776) - so the six-word passphrase above has an entropy of <strong>77.4 bits</strong>.</p>
+                <p>Compare this to choosing 10 letters at random: the entropy of that is 10 * log<sub>2</sub>(26) = <strong>47.0 bits</strong>.</p>
+                <p>If you were to use <a href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">ASCII printable characters</a>, you'd need at least 12 characters to surpass a six word memorable diceware password.</p> 
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="container content-section text-center">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+                <h2>How does it work?</h2>
+                <p>Feel free to email us to provide some feedback on our templates, give us suggestions for new templates and themes, or to just say hello!</p>
+                <p><a href="mailto:feedback@startbootstrap.com">feedback@startbootstrap.com</a>
+                </p>
+                <ul class="list-inline banner-social-buttons">
+                    <li>
+                        <a href="https://twitter.com/SBootstrap" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/IronSummitMedia/startbootstrap" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
+                    </li>
+                    <li>
+                        <a href="https://plus.google.com/+Startbootstrap/posts" class="btn btn-default btn-lg"><i class="fa fa-google-plus fa-fw"></i> <span class="network-name">Google+</span></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact2" class="container content-section text-center">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+                <h2>Why diceware?</h2>
+                <p>Feel free to email us to provide some feedback on our templates, give us suggestions for new templates and themes, or to just say hello!</p>
+                <p><a href="mailto:feedback@startbootstrap.com">feedback@startbootstrap.com</a>
+                </p>
+                <ul class="list-inline banner-social-buttons">
+                    <li>
+                        <a href="https://twitter.com/SBootstrap" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/IronSummitMedia/startbootstrap" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
+                    </li>
+                    <li>
+                        <a href="https://plus.google.com/+Startbootstrap/posts" class="btn btn-default btn-lg"><i class="fa fa-google-plus fa-fw"></i> <span class="network-name">Google+</span></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
     <!--[if lt IE 10]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
-    <div id="app" class="container"></div>
-
+    <!-- Footer -->
+    <footer>
+        <div class="container text-center">
+            <p>Copyright &copy; Your Website 2014</p>
+        </div>
+    </footer>
     <!-- build:js scripts/vendor.js -->
     <!-- bower:js -->
     <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/jquery.easing/js/jquery.easing.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
     <script src="scripts/app.js"></script>

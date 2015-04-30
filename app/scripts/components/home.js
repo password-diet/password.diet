@@ -122,9 +122,7 @@ export default class extends React.Component {
 
   render() {
     return (
-      <div>
-        <h1 className="text-center"><strong>Secure <a href="http://en.wikipedia.org/wiki/Diceware">diceware</a> passwords for you</strong></h1>
-                
+      <div>          
         <div className="row">
           <div className="col-md-8 col-lg-8 col-sm-12 col-xs-12 col-md-offset-2 col-lg-offset-2">
             <div className="text-center">
@@ -141,14 +139,7 @@ export default class extends React.Component {
             </div>
           </div>
         </div>
-        <div className="row diceware-explanation">
-          <div className="col-md-8 col-lg-8 col-sm-12 col-xs-12 col-md-offset-2 col-lg-offset-2">
-            <h3 className="text-center">Which is more memorable?<div><strong>Da6ee^ch.aij</strong> or <strong>mock omen laugh weary dy glen</strong>?</div></h3>
-            <h4 className="explanation-paragraph">The entropy offered by Diceware is 12.9 bits per word - log<sub>2</sub>(7776) - so the six-word passphrase above has an entropy of <strong>77.4 bits</strong>.</h4>
-            <h4 className="explanation-paragraph">Compare this to choosing 10 letters at random: the entropy of that is 10 * log<sub>2</sub>(26) = <strong>47.0 bits</strong>.</h4>
-            <h4 className="explanation-paragraph">If you were to use <a href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">ASCII printable characters</a>, you'd need at least 12 characters to surpass a six word memorable diceware password.</h4> 
-          </div>
-        </div>
+
       </div>
     );
   }
