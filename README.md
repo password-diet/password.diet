@@ -15,7 +15,7 @@ gem install sass
 gulp watch
 ```
 
-#### Compiling the production bundle (it'll be in the dist folder)
+#### Compiling the production bundle (it'll be in the dist folder after the build)
 ```
 gulp build:production
 ```
