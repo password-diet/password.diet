@@ -112,6 +112,12 @@ export default class extends React.Component {
 
     selectWords(evt) {
         SelectText(evt.target);
+        ga('send', 'event', 'text', 'clicked');
+    }
+
+    onCopyHandler(evt) {
+      console.log('text copied');
+      ga('send', 'event', 'text', 'copied');
     }
 
     selectCountry(evt) {
@@ -128,7 +134,7 @@ export default class extends React.Component {
     return (       
         <div className="row">
           <div className="col-lg-8 col-lg-offset-2 text-center">
-            <h3 className="well text-center password-well" onClick={this.selectWords}>{this.state.words.join(" ")}</h3>
+            <h3 className="well text-center password-well" onCopy={this.onCopyHandler} onClick={this.selectWords}>{this.state.words.join(" ")}</h3>
             <button type="button" className="btn btn-primary" onClick={ this.handleGenerate }><span className="glyphicon glyphicon-refresh"></span> Generate new</button>
             <div>
               <figure className="country-selector">
