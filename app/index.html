@@ -9,7 +9,11 @@
     <meta name="description" content="Password.diet generates secure, memorable random passwors with the diceware method entirely on the client side">
     <meta name="viewport" content="width=device-width">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    
     <link rel="stylesheet" href="styles/main.css">
+    <!-- build:css styles/vendor/jquery_floating_social.css -->
+    <link rel="stylesheet" href="bower_components/jquery-floating-social-share/dist/css/jquery.floating-social-share.min.css">
+    <!-- endbuild -->
     <!-- build:js scripts/vendor/modernizr.js -->
     <script src="bower_components/modernizr/modernizr.js"></script>
     <!-- endbuild -->
@@ -69,13 +73,13 @@
                         <a href="#page-top"></a>
                     </li>
                     <li>
-                        <a class="page-scroll" onclick="ga('send', 'event', 'headermenu', 'click', 'why'); _paq.push(['trackEvent', 'headermenu', 'click', 'why']);" href="#about">Why?</a>
+                        <a class="page-scroll" onclick="ga('send', 'event', 'headermenu', 'click', 'why'); ga('send', 'event', 'headermenu', 'click', 'why');" href="#about">Why?</a>
                     </li>
                     <li>
-                        <a class="page-scroll" onclick="ga('send', 'event', 'headermenu', 'click', 'how'); _paq.push(['trackEvent', 'headermenu', 'click', 'how']);" href="#contact">How?</a>
+                        <a class="page-scroll" onclick="ga('send', 'event', 'headermenu', 'click', 'how'); ga('send', 'event', 'headermenu', 'click', 'how');" href="#contact">How?</a>
                     </li>
                     <li>
-                        <a class="page-scroll" onclick="ga('send', 'event', 'headermenu', 'click', 'contact'); _paq.push(['trackEvent', 'headermenu', 'click', 'contact']);" href="#contact2">Contact</a>
+                        <a class="page-scroll" onclick="ga('send', 'event', 'headermenu', 'click', 'contact'); ga('send', 'event', 'headermenu', 'click', 'contact');" href="#contact2">Contact</a>
                     </li>
                 </ul>
             </div>
@@ -163,7 +167,7 @@
     <!-- endbuild -->
     <script src="scripts/app.js"></script>
     <script>
-        $("body").floatingShare({
+        $("body").floatingSocialShare({
             buttons: ["facebook","twitter","google-plus","stumbleupon","pinterest"],
             text: "share with: ",
             description: $("meta[name='description']").attr("content"),
@@ -175,24 +179,9 @@
       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
       })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-      ga('create', 'UA-62393193-1', 'auto');
+      ga('create', 'UA-66084854-1', 'auto');
       ga('send', 'pageview');
 
     </script>
-    <!-- Piwik -->
-    <script type="text/javascript">
-      var _paq = _paq || [];
-      _paq.push(['trackPageView']);
-      _paq.push(['enableLinkTracking']);
-      (function() {
-        var u="//analytics.ochronus.com/";
-        _paq.push(['setTrackerUrl', u+'piwik.php']);
-        _paq.push(['setSiteId', 2]);
-        var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-        g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
-      })();
-    </script>
-    <noscript><p><img src="//analytics.ochronus.com/piwik.php?idsite=2" style="border:0;" alt="" /></p></noscript>
-    <!-- End Piwik Code -->
   </body>
 </html>

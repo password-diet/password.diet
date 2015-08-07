@@ -107,20 +107,17 @@ export default class extends React.Component {
     handleGenerate(evt) {
         this.generateRandomList();
         ga('send', 'event', 'generatebutton', 'click');
-        _paq.push(['trackEvent', 'generatebutton', 'click']);
     }
     
 
     selectWords(evt) {
         SelectText(evt.target);
         ga('send', 'event', 'text', 'clicked');
-        _paq.push(['trackEvent', 'text', 'click']);
     }
 
     onCopyHandler(evt) {
       console.log('text copied');
       ga('send', 'event', 'text', 'copied');
-      _paq.push(['trackEvent', 'text', 'copied']);
     }
 
     selectCountry(evt) {
