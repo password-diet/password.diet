@@ -15,6 +15,8 @@ gem install sass
 gulp watch
 ```
 
+After that the local autorefresh dev server will be running at [localhost:9000](http://localhost:9000/)
+
 #### Compiling the production bundle (it'll be in the dist folder after the build)
 ```
 gulp build:production
