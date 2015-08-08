@@ -1,4 +1,5 @@
 import React from 'react';
+let dwGen = require('diceware-password-generator');
 
 window.cryptoMethod = window.crypto || window.msCrypto;
 
@@ -83,24 +84,19 @@ export default class extends React.Component {
     constructor(props) {
       super(props);
       this.state = {
-        'diceware_list': {},
         'words': [],
         'lang': 'en'
       }
       this.handleGenerate = this.handleGenerate.bind(this);
       this.selectCountry = this.selectCountry.bind(this);
     }
-    getRandomList() {
-        var words = [];
-        for(var i=0; i<6; i++) {
-            words.push(this.state.diceware_list[getDices()]);
-        }
-        return words;
-    }
 
+    componentDidMount() {
+      this.generateRandomList();
+    }
     generateRandomList() {
       this.setState({
-        'words': this.getRandomList()
+        'words': dwGen({'format': 'array', 'language': this.state.lang})
       });
     }
 
@@ -125,7 +121,8 @@ export default class extends React.Component {
       if (lang != this.state.lang) {
         document.getElementsByClassName("img-country img-country-active")[0].className = 'img-country';
         evt.target.className = 'img-country img-country-active';
-        this.fetchList(lang);
+        this.setState({'lang': lang});
+        this.generateRandomList();
       }
       ga('send', 'event', 'select_lang', 'click', lang);
     }
@@ -147,27 +144,5 @@ export default class extends React.Component {
           </div>
         </div>
     );
-  }
-
-  fetchList(lang) {
-      if (!lang) {
-        lang = this.state.lang;
-      }
-      get('/diceware_' + lang +'.json').then(
-        function(response) {
-          this.setState({
-            'diceware_list': JSON.parse(response),
-            'lang': lang
-          });
-          this.generateRandomList();
-        }.bind(this),
-        function(error) {
-          console.error("Failed!", error);
-        }
-      );
-  }
-
-  componentDidMount() {
-      this.fetchList();
   }
 }

@@ -1,7 +1,9 @@
 {
   "name": "password-diet",
   "version": "0.0.0",
-  "dependencies": {},
+  "dependencies": {
+    "diceware-password-generator": "^1.0.0"
+  },
   "devDependencies": {
     "babel-jest": "^5.0.1",
     "babelify": "^6.0.2",
