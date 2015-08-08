@@ -94,9 +94,9 @@ export default class extends React.Component {
     componentDidMount() {
       this.generateRandomList();
     }
-    generateRandomList() {
+    generateRandomList(lang) {
       this.setState({
-        'words': dwGen({'format': 'array', 'language': this.state.lang})
+        'words': dwGen({'format': 'array', 'language': lang ? lang: this.state.lang})
       });
     }
 
@@ -122,7 +122,7 @@ export default class extends React.Component {
         document.getElementsByClassName("img-country img-country-active")[0].className = 'img-country';
         evt.target.className = 'img-country img-country-active';
         this.setState({'lang': lang});
-        this.generateRandomList();
+        this.generateRandomList(lang);
       }
       ga('send', 'event', 'select_lang', 'click', lang);
     }
